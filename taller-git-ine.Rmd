@@ -1,6 +1,6 @@
 ---
-title: "_Control de versiones: Git y GitHub"
-date: "julio, 2021"
+title: "_Control de versiones: Git y Gitlab"
+date: "Junio, 2025"
 author: "" 
 output:
   xaringan::moon_reader:
@@ -23,18 +23,18 @@ class: animated, fadeIn
 ---
 class: inverse, left, middle
 
-# _Control de versiones: Git y GitHub._
+# _Control de versiones: Git, Github y Gitlab._
 
 
 Martín Venegas Márquez
 
 
 ***
-[Modelos Multinivel - SOC01133/MCS7174 • Primer Semestre 2025]()
+[Subdepartamento de Estadísticas Estructurales del Trabajo (SEET)]()
 
 <br>
 
-#### Marzo, 2025
+#### Junio, 2025
 
 ---
 # Contenidos de la sesión 
@@ -314,7 +314,21 @@ class: middle, center, inverse
 .right[![:scale 30%](images/github.png)]
 
 ---
-# Git ≠ Github
+# Gitlab: otra plataforma colaborativa
+
+> GitLab es una **plataforma** web para el desarrollo de software basada en Git, que permite albergar repositorios de código, pero también gestionar todo el ciclo de vida del desarrollo: desde la planificación y escritura del código, hasta las pruebas, revisión, integración continua y entrega.
+
+.left-column[
+- Para nuestro trabajo, entrega funciones idénticas a Github
+
+- **Principal ventaja**: permite contar con servidores propios (más seguridad)
+]
+
+.right[![:scale 30%](images/gitlab.png)]
+
+
+---
+# Git ≠ Github/Gitlab
 
 .left-column[
 .center[![:scale 40%](images/git.png)] 
@@ -323,9 +337,10 @@ class: middle, center, inverse
 ]
 
 .right-column[
-.center[![:scale 40%](images/github.png)]
+.center[![:scale 20%](images/github.png)]
+.center[![:scale 20%](images/gitlab.png)]
 
-.right[✅ GitHub es un servicio en la nube que permite almacenar repositorios Git y colaborar en ellos con otras personas.]
+.right[✅ GitHub  y Gitlab son un servicio en la nube que permite almacenar repositorios Git y colaborar en ellos con otras personas.]
 ]
 
 ---
@@ -336,6 +351,11 @@ class: middle, center, inverse
 # Ejemplo Github
 
 ![:scale 85%](images/github-page.png)
+
+---
+# Ejemplo Gitlab
+
+![:scale 55%](images/ejemplo-gitlab.png)
 
 ---
 # Git y Rstudio
@@ -356,9 +376,9 @@ class: middle, center, inverse
 ---
 # Conceptos centrales
 
-## 1. Repositorio _(Repository)_
+## 1. Repositorio _(Repository/Project)_
 
-- Es el espacio donde se almacenan todos los archivos, su historial de cambios y las configuraciones del proyecto. **Puede ser local (en el computador propio) o remoto (en plataformas como Github).**
+- Es el espacio donde se almacenan todos los archivos, su historial de cambios y las configuraciones del proyecto. **Puede ser local (en el computador propio) o remoto (en plataformas como Github o Gitlab).**
 
 - En concreto, es equivalente a una carpeta del computador.
 
@@ -367,7 +387,7 @@ class: middle, center, inverse
 ---
 # Conceptos centrales
 
-## 1. Repositorio _(Repository)_
+## 1. Repositorio _(Repository/Project)_
 
 ### ❗ Primero veremos como inicializar un repositorio local a través de RStudio.
 
@@ -471,9 +491,9 @@ Al hacer click en _Commit_ se debería ver algo como esto:
 
 - Existen distintas formas de conectar con el repositorio remoto, dependiendo del estado del trabajo. Las principales son: 
 
-1. Nuevo proyecto, Github primero
-2. Proyecto existente, Github primero
-3. Proyecto existente, Github al final
+1. Nuevo proyecto, Github/Gitlab primero
+2. Proyecto existente, Github/Gitlab primero
+3. Proyecto existente, Github/Gitlab al final
 
 ---
 # Conceptos centrales
@@ -484,9 +504,9 @@ Al hacer click en _Commit_ se debería ver algo como esto:
 
 - Existen distintas formas de conectar con el repositorio remoto, dependiendo del estado del trabajo. Las principales son: 
 
-1. **Nuevo proyecto, Github primero → ¡Esta es la que veremos aquí!** ✅
-2. Proyecto existente, Github primero
-3. Proyecto existente, Github al final
+1. **Nuevo proyecto, Github/Gitlab primero → ¡Esta es la que veremos aquí!** ✅
+2. Proyecto existente, Github/Gitlab primero
+3. Proyecto existente, Github/Gitlab al final
 
 ---
 # Conceptos centrales
@@ -503,86 +523,71 @@ Al hacer click en _Commit_ se debería ver algo como esto:
 ---
 .center[![](images/git-flow.png)]
 ---
-## Crear repositorio remoto desde Github
+## Crear repositorio remoto desde Gitlab
 
-En Github, ir al perfil propio y hacer click en botón verde "New".
+En Gitlab, ir a la carpeta dónde se quiere hacer el repositorio y hacer click en botón verde "New project".
 
-.center[![:scale 80%](images/new_repo.png)]
+.center[![:scale 80%](images/gitlab1.png)]
 
 ---
-## Crear repositorio remoto desde Github
+## Crear repositorio remoto desde Gitlab
 
-.left-column[Introducir la información del repositorio:
+Da la opción de crear un repositorio desde 0, usar una plantilla y migrar un repositorio. Usaremos la opción "Create blank project".
 
-- _**Repository template:**_ no es necesario por ahora
-- _**Repository name:**_ escoger un nombre (sin espacios)
-- _**Description:**_ descripción breve del repositorio
-- _**Public o Private:**_ público (a menos que haya una razón para dejarlo privado)
-- _**Add a README file:**_ marcar casilla
-- _**Add .gitignore:**_ R (a menos que se use otro programa)
-- _**Choose a license:**_ ninguna
+.center[![:scale 70%](images/gitlab2.png)]
 
-Apretar botón verde "Create repository"
-]
-.right[![:scale 40%](images/new_repo2.png)]
 ---
-## Crear repositorio remoto desde Github
+## Crear repositorio remoto desde Gitlab
+
+Explicitar nombre del proyecto (*Project name*), nombre para la URL (*Project slug*), nivel de privacidad y si se inicializa el reposotorio con un README.
+
+.center[![:scale 70%](images/gitlab3.png)]
+---
+## Crear repositorio remoto desde Gitlab
 
 Así se verá el repo creado:
 
-.center[![:scale 80%](images/new_repo3.png)]
+.center[![:scale 60%](images/gitlab4.png)]
 ---
 ## Clonar repositorio remoto
 
 Code > HTTPS > Copiar URL
 
-.center[![:scale 80%](images/clone_repo.png)]
+.center[![:scale 70%](images/gitlab5.png)]
 ---
 ## Clonar repositorio remoto
 
 RStudio > New project > Version control
 
-.center[![:scale 63%](images/clone_repo2.png)]
+.center[![:scale 80%](images/gitlab6.png)]
 
 ---
 ## Clonar repositorio remoto
 
 RStudio > New project > Version control > Git > Pegar URL > Create project
 
-.center[![:scale 63%](images/clone_repo3.png)]
+.center[![:scale 80%](images/gitlab7.png)]
 
 ---
 ## Hacer cambios, commit, pull, push
 
 Crear/modificar archivos > _stage_ > _commit_
 
-.center[![:scale 63%](images/clone_repo4.png)]
+.center[![:scale 80%](images/gitlab8.png)]
 
 ---
 ## Hacer cambios, commit, pull, push
 
 Hacer pull (⬇) de los cambios en el remoto. En este caso, todo al día.
 
-.center[![:scale 63%](images/git-pull.png)]
+.center[![:scale 80%](images/gitlab9.png)]
 
 ---
 ## Hacer cambios, commit, pull, push
 
 Hacer push (⬆) de los commits realizados
 
-.center[![:scale 63%](images/clone_repo5.png)]
----
-## Hacer cambios, commit, pull, push
-
-Si solicita autorización, entrar a través del navegador con las credenciales Github (o Token).
-
-.center[![:scale 63%](images/clone_repo6.png)]
----
-## Hacer cambios, commit, pull, push
-
-Un push exitoso se debería ver asi:
-
-.center[![:scale 63%](images/clone_repo7.png)]
+.center[![:scale 80%](images/gitlab10.png)]
 
 ---
 # Conceptos centrales
@@ -611,51 +616,51 @@ Las ramas se pueden:
 ---
 ## Rama en remoto y luego pull (⬇)
 
-En Github, hacer click en main, luego escribir nombre de rama y apretar "_Create banch_ [nombre rama] _from main_"
+En Gilab, hacer click en **+** y luego "New branch"
 
-.center[![:scale 63%](images/rama1.png)]
+.center[![:scale 65%](images/gitlab11.png)]
+
+---
+## Rama en remoto y luego pull (⬇)
+
+Especificar el nombre de la branch
+
+.center[![:scale 80%](images/gitlab12.png)]
 
 ---
 ## Rama en remoto y luego pull (⬇)
 
 Se verá así:
 
-.center[![:scale 63%](images/rama2.png)]
+.center[![:scale 65%](images/gitlab13.png)]
 
 ---
 ## Rama en remoto y luego pull (⬇)
 
 Ir a RStudio y hacer pull (⬇):
 
-.center[![:scale 63%](images/rama3.png)]
+.center[![:scale 80%](images/gitlab14.png)]
 
 ---
 ## Rama local y hacer push (⬆)
 
 En RStudio, botón morado y escribir nombre rama. En _Remote:_ debe decir _origin_. Click en crear.
 
-.center[![:scale 63%](images/rama4.png)]
-
----
-## Rama local y hacer push (⬆)
-
-Si solicita autorización, utilizar credenciales o token Github.
-
-.center[![:scale 63%](images/rama5.png)]
+.center[![:scale 80%](images/gitlab15.png)]
 
 ---
 ## Rama local y hacer push (⬆)
 
 Se debería ver así:
 
-.center[![:scale 63%](images/rama6.png)]
+.center[![:scale 80%](images/gitlab16.png)]
 
 ---
 ## Rama local y hacer push (⬆)
 
-En Github aparecerá la nueva rama:
+En Gitlab aparecerá la nueva rama:
 
-.center[![:scale 60%](images/rama7.png)]
+.center[![:scale 65%](images/gitlab17.png)]
 
 ---
 # Conceptos centrales
@@ -675,45 +680,43 @@ Cuando trabajamos con ramas, necesitamos combinarlas. Hay dos opciones:
 ---
 .center[![:scale 50%](images/gits.jfif)]
 ---
-## Fusionar por _merge_ _(pull request)_ desde Github
+## Fusionar por _merge_ _(merge request)_ desde Gitlab
 
-En la branch creada (en este caso rama-prueba2) hacer cambios, stage, commit, pull, push.
+En la branch creada (en este caso _tarea2_) hacer cambios, stage, commit, pull, push.
 
-.center[![:scale 63%](images/merge1.png)]
-
----
-## Fusionar por _merge_ _(pull request)_ desde Github
-
-Ir a Github, hacer click en "Compare & pull request". Esto es para abrir una solicitus de _merge_ entre la _main_ y la _rama-prueba2_.
-
-.center[![:scale 65%](images/merge2.png)]
----
-## Fusionar por _merge_ _(pull request)_ desde Github
-
-Añadir información relevante respecto a la solicitud _(pull request)_. Por defecto el título es el nombe del último commit. Hacer click en "Create pull request".
-
-.center[![:scale 58%](images/merge3.png)]
+.center[![:scale 80%](images/gitlab18.png)]
 
 ---
-## Fusionar por _merge_ _(pull request)_ desde Github
+## Fusionar por _merge_ _(merge request)_ desde Gitlab
 
-Solicitud creada _(pull request)_. Aqui se puede interactuar con los miembros del equipo, revisar los cambios etc. Para aceptar la solicitud hacer clik en "Merge pull request".
+Ir a Gitlab, hacer click en "Create merge request". Esto es para abrir una solicitud de _merge_ entre la _master_ y la _tarea2_.
 
-.center[![:scale 48%](images/merge4.png)]
+.center[![:scale 65%](images/gitlab19.png)]
+---
+## Fusionar por _merge_ _(merge request)_ desde Gitlab
+
+Añadir información relevante respecto a la solicitud _(merge request)_. Por defecto el título es el nombre del último commit. Hacer click en "_Submit pull request_".
+
+.center[![:scale 58%](images/gitlab20.png)]
 
 ---
-## Fusionar por _merge_ _(pull request)_ desde Github
+## Fusionar por _merge_ _(merge request)_ desde Gitlab
+
+Solicitud creada _(merge request)_. Aqui se puede interactuar con los miembros del equipo, revisar los cambios etc. Para aceptar la solicitud hacer clik en "_Merge_".
+
+.center[![:scale 50%](images/gitlab21.png)]
+
+---
+## Fusionar por _merge_ _(merge request)_ desde Gitlab
 
 Al aceptar la solicitud se verá así:
 
-.center[![:scale 51%](images/merge5.png)]
+.center[![:scale 50%](images/gitlab22.png)]
 
 ---
-## Fusionar por _merge_ _(pull request)_ desde Github
+## Fusionar por _merge_ _(merge request)_ desde Gitlab
 
-Y en Github se verá así:
-
-.center[![:scale 70%](images/merge6.png)]
+.center[![:scale 60%](images/gitlab23.png)]
 
 ---
 # Conceptos centrales
@@ -972,7 +975,7 @@ A - B (HEAD)
 # Aplicando lo aprendido
 ## Parte II: remoto
 
-1. ⬜ En Github, crear un repositorio remoto con el nombre "taller-git-remoto".
+1. ⬜ En Gitlab, crear un repositorio remoto con el nombre "taller-git-remoto".
 2. ⬜ Copiar el URL HTTPS del repositorio.
 3. ⬜ En RStudio, clonar el repositorio remoto via HTTPS.
 4. ⬜ Crear un archivo que se llamo "archivo_prueba.R" y escribir un comentario en él.
@@ -980,14 +983,14 @@ A - B (HEAD)
 6. ⬜ Hacer commit de los cambios.
 7. ⬜ Hacer pull.
 8. ⬜ Hacer push.
-9. ⬜ En Github, revisar los cambios.
+9. ⬜ En Gitlab, revisar los cambios.
 
 ---
 
 # Aplicando lo aprendido
 ## Parte II: remoto
 
-1. ✅ En Github, crear un repositorio remoto con el nombre "taller-git-remoto".
+1. ✅ En Gitlab, crear un repositorio remoto con el nombre "taller-git-remoto".
 2. ✅ Copiar el URL HTTPS del repositorio.
 3. ✅ En RStudio, clonar el repositorio remoto via HTTPS.
 4. ✅ Crear un archivo que se llamo "archivo_prueba.R" y escribir un comentario en él.
@@ -995,27 +998,27 @@ A - B (HEAD)
 6. ✅ Hacer commit de los cambios.
 7. ✅ Hacer pull.
 8. ✅ Hacer push.
-9. ✅ En Github, revisar los cambios.
+9. ✅ En Gitlab, revisar los cambios.
 
 ---
 
 # Aplicando lo aprendido
 ## Parte III: branches
 
-1. ⬜ En Github, crear una branch llamada "branch1" desde el remoto.
+1. ⬜ En Gitlab, crear una branch llamada "branch1" desde el remoto.
 2. ⬜ En Rstudio, hacer pull de "branch1".
 3. ⬜ En Rstudio, crear una branch llamada "branch2" conectada con el remoto.
-4. ⬜ En Github, revisar que existan las branches: main, branch1 y branch2.
+4. ⬜ En Gitlab, revisar que existan las branches: main, branch1 y branch2.
 
 ---
 
 # Aplicando lo aprendido
 ## Parte III: branches
 
-1. ✅ En Github, crear una branch llamada "branch1" desde el remoto.
+1. ✅ En Gitlab, crear una branch llamada "branch1" desde el remoto.
 2. ✅ En Rstudio, hacer pull de "branch1".
 3. ✅ En Rstudio, crear una branch llamada "branch2" conectada con el remoto.
-4. ✅ En Github, revisar que existan las branches: main, branch1 y branch2.
+4. ✅ En Gitlab, revisar que existan las branches: main, branch1 y branch2.
 
 ---
 
@@ -1025,7 +1028,7 @@ A - B (HEAD)
 1. ⬜ En RStudio, ir a "branch2".
 2. ⬜ Crear un archivo "nuevo_archivo2.R" y añadir un comentario.
 3. ⬜ Hacer stage, commit, pull, push.
-4. ⬜ En Github, crear solicitud de pull request.
+4. ⬜ En Gitlab, crear solicitud de pull request.
 5. ⬜ Aceptar solicitud de pull request.
 6. ⬜ Revisar main que los cambios se hayan incorporado correctamente.
 
@@ -1037,7 +1040,7 @@ A - B (HEAD)
 1. ✅ En RStudio, ir a "branch2".
 2. ✅ Crear un archivo "nuevo_archivo2.R" y añadir un comentario.
 3. ✅ Hacer stage, commit, pull, push.
-4. ✅ En Github, crear solicitud de pull request.
+4. ✅ En Gitlab, crear solicitud de pull request.
 5. ✅ Aceptar solicitud de pull request.
 6. ✅ Revisar main que los cambios se hayan incorporado correctamente.
 
@@ -1073,7 +1076,7 @@ A - B (HEAD)
 3. ⬜ En la Terminal, escribe `git revert HEAD`. 
 4. ⬜ Se abrirá el editor de mensaje en la Terminal. Tecla Esc > Escribir :wq y luego tecla Enter.
 5. ⬜ En la Terminal, escribe `git push`.
-6. ⬜ Ve a Github a revisar el commit de reversión.
+6. ⬜ Ve a Gitlab a revisar el commit de reversión.
 
 ---
 
@@ -1084,7 +1087,7 @@ A - B (HEAD)
 3. ✅ En la Terminal, escribe `git revert HEAD`. 
 4. ✅ Se abrirá el editor de mensaje en la Terminal. Tecla Esc > Escribir :wq y luego tecla Enter.
 5. ✅ En la Terminal, escribe `git push`.
-6. ✅ Ve a Github a revisar el commit de reversión.
+6. ✅ Ve a Gitlab a revisar el commit de reversión.
 
 ---
 
