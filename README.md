@@ -1,2 +1,2 @@
-# taller-git-uch
-Taller Git y Github Uch
+# taller-git-ine
+Taller Git, Github y Gitlab INE
