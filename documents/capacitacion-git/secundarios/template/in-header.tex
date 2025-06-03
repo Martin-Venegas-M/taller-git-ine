@@ -1,0 +1,362 @@
+%-----------------------
+%	Cargar paquetes y otras modificaciones
+%-----------------------
+
+% Paquetes
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{xcolor} % Cargar paquete xcolor con nombres de colores
+\usepackage{etoolbox} % Modificar el comportamiento de \chapter
+\usepackage{sectsty} % Editar títulos
+\usepackage{caption} % Configuración de leyendas
+\usepackage{array} % Definir nuevos tipos de columnas en tablas
+\usepackage{titlesec} % Modificar títulos
+\usepackage{sidenotes}
+\usepackage{xparse}
+\usepackage{fontspec} % Para cargar cada fuente
+\usepackage{tocloft}  % Paquete para personalizar ToC, LoF y LoT
+% \usepackage{hyperref} % Para cambiar formato de referencias
+\usepackage{tikz} % Para crear gráficos y dibujos
+\usepackage{geometry} % Para controlar dimensiones de la página y márgenes
+\usepackage{graphicx} % Para manipular gráficos
+
+% Colores
+\definecolor{colorCUT}{HTML}{8760ac}
+\definecolor{colorCH}{HTML}{2d93ad}
+
+\usepackage[table]{xcolor}
+\definecolor{lightpurple}{HTML}{DECBE4}
+
+% Fuente
+\setmainfont{Bahnschrift.ttf}
+
+%-----------------------
+%	CONFIGURAR ToC, LoF, LoT
+%-----------------------
+
+% TOC
+% Configura el fondo del título de la tabla de contenidos
+\renewcommand{\cfttoctitlefont}{%
+    \color{white} % Cambia el color del texto del título
+    \colorbox{colorCUT}{%
+        \makebox[\textwidth][l]{% Ajusta el tamaño del colorbox
+            \Large\bfseries\textcolor{white}{\contentsname}%
+        }%
+    }%
+}
+
+% Ajusta el espaciado de la tabla de contenidos
+\renewcommand{\cftaftertoctitleskip}{0pt} % Elimina el espacio después del título de la tabla de contenidos
+
+% Asegúrate de que no hay texto adicional
+\renewcommand{\cftaftertoctitle}{\vspace{-\baselineskip}\hfill} % Añade un \hfill para asegurar que no haya texto extra
+
+% LOF
+% Configura el fondo del título de la lista de figuras
+\renewcommand{\cftloftitlefont}{%
+    \color{white} % Cambia el color del texto del título
+    \colorbox{colorCUT}{%
+        \makebox[\textwidth][l]{% Ajusta el tamaño del colorbox
+            \Large\bfseries\textcolor{white}{\listfigurename}%
+        }%
+    }%
+}
+
+% Ajusta el espaciado de la lista de figuras
+\renewcommand{\cftafterloftitleskip}{0pt} % Elimina el espacio después del título de la lista de figuras
+
+% LOT
+% Configura el fondo del título de la lista de tablas
+\renewcommand{\cftlottitlefont}{%
+    \color{white} % Cambia el color del texto del título
+    \colorbox{colorCUT}{%
+        \makebox[\textwidth][l]{% Ajusta el tamaño del colorbox
+            \Large\bfseries\textcolor{white}{\listtablename}%
+        }%
+    }%
+}
+
+% Ajusta el espaciado de la lista de tablas
+\renewcommand{\cftafterlottitleskip}{0pt} % Elimina el espacio después del título de la lista de tablas
+
+% Asegúrate de que no haya texto adicional
+\renewcommand{\cftafterlottitle}{\vspace{-\baselineskip}} % Ajusta el espacio después del título
+
+% Personaliza ToC, LoF y LoT
+\makeatletter
+% Eliminar el salto de página en \listoftables
+\patchcmd{\listoftables}{\clearpage}{}{}{} % Remueve el salto de página después de la lista de tablas
+
+% Evitar la creación de páginas en blanco después de ToC y LoF
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{
+  \oldtableofcontents
+  \afterpage{\clearpage} % Asegura que no haya página en blanco después de ToC
+}
+
+\let\oldlistoffigures\listoffigures
+\renewcommand{\listoffigures}{
+  \oldlistoffigures
+  \afterpage{\clearpage} % Asegura que no haya página en blanco después de LoF
+}
+\makeatother
+
+%-----------------------
+%	CONFIGURAR PIE DE PÁGINA
+%-----------------------
+
+% Estilo general para el pie de página en todo el documento
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\raisebox{-\footrulewidth}{\colorbox{colorCH}{\textbf{\textcolor{white}{\thepage}}}}}
+\renewcommand{\footrulewidth}{1.25pt}
+
+% Definir las reglas del pie de página para páginas pares e impares
+\newcommand{\evenfootrule}{%
+  {
+   \color{white}\rule{1.2\linewidth}{\footrulewidth}%
+   }}
+
+\newcommand{\oddfootrule}{%
+  {
+   \color{white}\rule{1.2\linewidth}{\footrulewidth}%
+   }}
+
+\renewcommand{\footrule}{%
+  \ifodd\value{page}%
+    \oddfootrule%
+  \else%
+    \evenfootrule%
+  \fi%
+}
+
+% Estilo especial para las primeras páginas de los capítulos
+\fancypagestyle{chapterfirst}{
+  \fancyhf{} % Limpiar encabezado y pie de página
+  \fancyfoot[C]{\raisebox{-\footrulewidth}{\colorbox{colorCH}{\textbf{\textcolor{white}{\thepage}}}}}
+  \renewcommand{\footrulewidth}{1.25pt}
+}
+
+% Aplica el estilo a la primera página del primer capítulo (página inicial del documento)
+\fancypagestyle{plain}{
+  \fancyhf{} % Limpia encabezados y pies de página
+  \renewcommand{\footrulewidth}{0pt} % Elimina la línea del pie de página
+}
+
+
+%-----------------------
+%	HEADER
+%-----------------------
+
+% Definir un nuevo comando para almacenar el texto predefinido
+% Modificar para cada documento
+\newcommand{\chapterTitle}{Documento de Principales Resultados - II ENUT}
+
+% Limpiar encabezados y pies de página
+\fancyhead{}
+
+% Definir encabezado para páginas impares y pares
+\fancyhead[LO,RE]{\textcolor{colorCH}{\chapterTitle}}
+\fancyhead[C]{}
+\fancyhead[RO,LE]{}
+
+% Ancho de la línea del encabezado
+\renewcommand{\headrulewidth}{0.75pt}
+
+% Definir la línea horizontal en páginas pares e impares
+\newcommand{\evenheadrule}{%
+  {
+  \color{white}\rule{0.3\headwidth}{1.25pt}%
+  \color{colorCH}\rule{0.7\headwidth}{1.25pt}%
+}}
+
+\newcommand{\oddheadrule}{%
+  {
+  \color{colorCH}\rule{0.7\headwidth}{1.25pt}%
+  \color{white}\rule{0.3\headwidth}{1.25pt}%
+}}
+
+% Redefinir la regla del encabezado según si la página es par o impar
+\renewcommand{\headrule}{%
+  \ifodd\value{page}%
+    \oddheadrule%
+  \else%
+    \evenheadrule%
+  \fi%
+}
+
+% Estilo especial para las primeras páginas de los capítulos
+\fancypagestyle{chapterfirst}{
+  \fancyhf{} % Limpiar encabezado y pie de página
+  \fancyhead[LO,RE]{\textcolor{colorCH}{\chapterTitle}} % Encabezado
+  \fancyhead[C]{}
+  \fancyhead[RO,LE]{}
+  \fancyfoot[C]{\raisebox{-\footrulewidth}{\colorbox{colorCH}{\textbf{\textcolor{white}{\thepage}}}}}
+  \renewcommand{\headrulewidth}{0.75pt}
+  \renewcommand{\footrulewidth}{1.25pt}
+  \renewcommand{\headrule}{%
+    \ifodd\value{page}%
+      \oddheadrule%
+    \else%
+      \evenheadrule%
+    \fi%
+  }
+}
+
+% Aplicar estilo solo en las primeras páginas de los capítulos
+%%% Funciona el header y el footer %%%
+\patchcmd{\chapter}{plain}{chapterfirst}{}{}
+
+
+%-----------------------
+%	TÍTULOS
+%-----------------------
+
+% Redefinir la numeración de capítulos con ceros a la izquierda
+% \makeatletter
+% \renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
+% \makeatother
+
+% Redefinir el formato de capítulos
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+  {%
+    \noindent % Asegurarse de que no haya sangría en la línea
+    \colorbox{colorCUT}{\textcolor{white}{\normalfont\Huge \csname thechapter\endcsname}}%
+    \hspace{1em} % Espacio horizontal entre el colorbox y el título del capítulo
+    {\normalfont\Huge\bfseries #1} % Formato del título
+    \par\nobreak
+    \vspace{2em} % Espacio después del título
+  }%
+}
+\makeatother
+
+
+%-----------------------
+%	SUB-TÍTULOS
+%-----------------------
+
+% Redefinir el formato de subsecciones
+\makeatletter
+\renewcommand{\@seccntformat}[1]{%
+  \ifnum\value{#1}=0\else%
+    \textcolor{colorCUT}{\csname the#1\endcsname.\hspace{0.5em}}%
+  \fi
+}
+\makeatother
+
+% Personalizar el formato del título de subsecciones
+\titleformat{\subsection}[runin]
+  {\mdseries\normalsize \color{black}} % Formato del título (texto en negro)
+  {\textcolor{colorCUT}{\thesubsection}} % Formato del número (en colorCUT)
+  {0.5em} % Espacio entre el número y el título
+  {} % No se agrega texto adicional antes del título
+
+%-----------------------
+%	TABLES
+%-----------------------
+
+\DeclareCaptionLabelSeparator{narrow}{\hspace{0.5pt}} % Define un espacio muy pequeño
+
+\captionsetup[table]{
+    skip=1pt,
+    font={bf,normalsize},
+    labelsep=narrow,
+    labelfont={color=white},
+    textfont={color=colorCUT},
+    format=plain,
+    justification=centering,
+    singlelinecheck=false,
+    name={\colorbox{colorCUT}{\textcolor{white}{\textbf{Tabla \thetable}}}}
+}
+
+\renewcommand{\thetable}{\arabic{table}} % Definir el formato del contador de tablas
+
+%-----------------------
+%	FIGURAS
+%-----------------------
+
+\captionsetup[figure]{
+    skip=1pt,
+    font={bf,normalsize},
+    labelsep=narrow,
+    labelfont={color=white},
+    textfont={color=colorCUT},
+    format=plain,
+    justification=centering,
+    singlelinecheck=false,
+    name={\colorbox{colorCUT}{\textcolor{white}{\textbf{Figura \thefigure}}}}
+}
+
+\renewcommand{\thefigure}{\arabic{figure}} % Formato del contador de figuras
+
+%-----------------------
+%	NOTAS AL LADO
+%-----------------------
+
+% Ejemplo corregido para notas al lado (sidenotes)
+\makeatletter
+\RenewDocumentCommand\sidenotetext{o o +m}{%
+    \IfNoValueOrEmptyTF{#1}{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{\thesidenote}\footnotesize #3}%
+        \refstepcounter{sidenote}%
+    }{%
+        \@sidenotes@placemarginal{#2}{\textsuperscript{#1}\footnotesize #3}%
+    }%
+}
+\makeatother
+
+% Opciones adicionales para notas sin numeración
+\newcommand{\nonumsidenote}[2][]{\sidenote[\hspace{30pt}][#1]{\footnotesize #2}}
+\newcommand{\sidenotequote}[2][]{\sidenote[\hspace{30pt}][#1]{\rmfamily\itshape #2}}
+
+%-----------------------
+%	NOTAS AL PIE
+%-----------------------
+
+\makeatletter
+% Cambiar el color y poner en negrita el número de la nota al pie
+\renewcommand\@makefnmark{%
+    \textsuperscript{\textbf{\textcolor{colorCH}{\@thefnmark}}}% Número en negrita y en colorCH
+}
+
+% Cambiar el color del texto de la nota al pie
+\renewcommand\@makefntext[1]{%
+  \noindent\makebox[0pt][r]{\@makefnmark\ }%
+  \textcolor{colorCH}{#1}% Cambia el color del texto de la nota
+}
+
+% Cambiar el color de la línea de las notas al pie
+\renewcommand\footnoterule{%
+    \kern-1pt % Ajuste de la separación de la línea con el texto
+    \color{colorCH}% Cambia el color de la línea
+    \hrule width 0.4\columnwidth height 0.5pt % Ajusta el ancho y el grosor de la línea
+    \kern 1pt % Ajuste del espacio debajo de la línea
+}
+\makeatother
+
+%-----------------------
+%	NOTAS AL PIE
+%-----------------------
+% Fijar colores para referencias
+% 
+% \usepackage{hyperref} % Para cambiar formato de referencias
+% 
+% \hypersetup{
+%     colorlinks=true, % Activar colores
+%     linkcolor=red,   % Color para enlaces internos
+%     urlcolor=red,    % Color para URLs
+%     citecolor=red    % Color para citas
+% }
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\listoftables}{\clearpage}{}{}{} % Evita la página en blanco después de la lista de tablas
+\makeatother
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\listoffigures}{\clearpage}{}{}{} % Evita la página en blanco después de la lista de figuras
+\patchcmd{\tableofcontents}{\clearpage}{}{}{} % Evita la página en blanco después de la tabla de contenido
+\patchcmd{\listoftables}{\clearpage}{}{}{} % Evita la página en blanco después de la lista de tablas
+\makeatother

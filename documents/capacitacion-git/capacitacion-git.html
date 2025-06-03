@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="capacitacion-git_files/libs/clipboard/clipboard.min.js"></script>
+<script src="capacitacion-git_files/libs/quarto-html/tabby.min.js"></script>
+<script src="capacitacion-git_files/libs/quarto-html/popper.min.js"></script>
+<script src="capacitacion-git_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="capacitacion-git_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="capacitacion-git_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="capacitacion-git_files/libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.32">
+
+  <title>capacitacion-git</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="capacitacion-git_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="capacitacion-git_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="capacitacion-git_files/libs/revealjs/dist/theme/quarto-2ff78e2e6999b6200d15f6cb181d00bd.css">
+  <link rel="stylesheet" href="ine_quarto_styles.css">
+  <link href="capacitacion-git_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="capacitacion-git_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="capacitacion-git_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="capacitacion-git_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<p><span class="linea-superior"></span> <span class="linea-inferior"></span></p>
+
+<img src="secundarios/imagenes/logo_portada2.png" width="20%" class="r-stretch"><p><span class="big-par center-justified"><strong>Control de versiones y entornos colaborativos para la producción de datos</strong></span></p>
+<p><span class="big-par center-justified"><em>Capacitación ENUT-ESI</em></span></p>
+<p><span class="big-par center-justified"><em>Noviembre 2024</em></span></p>
+</section>
+<section id="contenidos" class="slide level2 custom-bg">
+<h2>​ Contenidos</h2>
+<div class="fragment">
+<ol type="1">
+<li>¿Qué es el control de versiones?</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>¿Por qué usar control de versiones?</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>¿Cómo usar el control de versiones?</li>
+</ol>
+</div>
+</section></section>
+<section>
+<section id="qué-es-el-control-de-versiones" class="title-slide slide level1 custom-bg center">
+<h1>1. Qué es el control de versiones</h1>
+
+</section>
+<section id="definiendo-el-control-de-verisones" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Definiendo el control de verisones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<blockquote>
+<p>Un control de versiones es un <strong>sistema</strong> que <strong>registra los cambios</strong> realizados en un archivo o conjunto de archivos a lo largo del <strong>tiempo</strong>, de modo que puedas <strong>recuperar</strong> versiones específicas más adelante (<a href="https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Acerca-del-Control-de-Versiones">Git</a>)</p>
+</blockquote>
+<blockquote>
+<p>El control de versiones, también conocido como “control de código fuente”, es la práctica de <strong>rastrear</strong> y gestionar los cambios en el código de software. Los <strong>sistemas</strong> de control de versiones son herramientas de software que ayudan a los equipos de software a gestionar los cambios en el código fuente a lo largo del <strong>tiempo</strong> (<a href="https://www.atlassian.com/es/git/tutorials/what-is-version-control">Atlassian</a>)</p>
+</blockquote>
+</section>
+<section id="definiendo-el-control-de-verisones-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Definiendo el control de verisones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<blockquote>
+<p>Los sistemas de control de versiones son un tipo de <strong>software</strong> que ayuda a hacer un <strong>seguimiento de los cambios</strong> realizados en el código a lo largo del <strong>tiempo</strong>. A medida que un desarrollador edita el código, el sistema de control de versiones toma una instantánea de los archivos. Después, guarda esa instantánea de forma permanente para que se pueda <strong>recuperar</strong> más adelante si es necesario (<a href="https://learn.microsoft.com/es-es/devops/develop/git/what-is-version-control">Microsoft</a>)</p>
+</blockquote>
+
+<img data-src="secundarios/imagenes/versioncontrol.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="definiendo-el-control-de-verisones-2" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Definiendo el control de verisones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><p><strong>Idea principal:</strong> Un sistema que permite llevar un registro de los cambios efectuados a uno o más archivos a través del tiempo</p></li>
+<li><p>Google Docs y Microsoft Word como las formas más conocidas de llevar un registro de cambios</p></li>
+<li><p>Usar el nombre de los archivos para denotar la versión</p></li>
+</ul>
+</div></div>
+
+<img data-src="secundarios/imagenes/google.png" class="quarto-figure quarto-figure-right r-stretch" style="width:100.0%"></section>
+<section id="nombres-como-versionamiento" class="slide level2">
+<h2>Nombres como versionamiento…</h2>
+
+<img data-src="secundarios/imagenes/final.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="nombres-como-versionamiento-1" class="slide level2">
+<h2>Nombres como versionamiento…</h2>
+
+<img data-src="secundarios/imagenes/exit.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
+<section>
+<section id="por-qué-usar-el-control-de-versiones" class="title-slide slide level1 custom-bg center">
+<h1>2. ¿Por qué usar el control de versiones?</h1>
+
+</section>
+<section id="primera-razón-credibilidad" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Primera razón: credibilidad</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="ciencia-abierta">Ciencia abierta:</h4>
+<blockquote>
+<p>«Ciencia abierta» es un término genérico utilizado para referirse a los conceptos de apertura, transparencia, rigor, reproducibilidad, replicabilidad y acumulación de conocimientos, todos ellos considerados rasgos fundamentales del quehacer científico. (<a href="https://osf.io/preprints/psyarxiv/cfzyx">Cruwell et al., 2019</a>)</p>
+</blockquote>
+<blockquote>
+<p>Las reformas propuestas en materia de ciencia abierta responden en gran medida a la constatación de que las prácticas habituales de investigación socavan los principios fundamentales de la ciencia abierta y de alta calidad (…). La mayoría de los científicos coinciden en que existe una crisis de reproducibilidad, al menos en cierta medida. (<a href="https://osf.io/preprints/psyarxiv/cfzyx">Cruwell et al., 2019</a>)</p>
+</blockquote>
+</section>
+<section id="primera-razón-credibilidad-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Primera razón: credibilidad</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<p>Principios mertonianos de la ciencia:</p>
+<ul>
+<li><p><strong>Universalismo:</strong> La idea de que las afirmaciones científicas deben estar sujetas criterios objetivos preestablecidos e impersonales.</p></li>
+<li><p><strong>Comunalismo:</strong> Los hallazgos de la ciencia son propiedad común de la comunidad científica y el progreso científico depende de la comunicación abierta y el intercambio.</p></li>
+<li><p><strong>Desinterés:</strong> La ciencia debería limitar la influencia del sesgo tanto como sea posible y debería hacerse por el bien de la ciencia, más que por interés propio o poder.</p></li>
+<li><p><strong>Escepticismo organizado:</strong> La necesidad de prueba o verificación somete a la ciencia a más escrutinio que cualquier otro campo.</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="secundarios/imagenes/definitions.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="secundarios/imagenes/reproducible.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="primera-razón-credibilidad-2" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Primera razón: credibilidad</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Como productores de datos, no hacemos ciencia directamente, pero damos los insumos para el avance de la investigación</p></li>
+<li><p>Por lo demás, somos fuente directa de la toma de decisiones en materia de políticas públicas</p></li>
+<li><p>El INE avanza en la reproducibilidad al entregar documentos de metodología y manual de usuario, pero esto es solo el principio.</p></li>
+</ul>
+</section>
+<section id="segunda-razón-eficiencia" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Segunda razón: eficiencia</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Proyectos grandes y complejos: muchas decisiones entre muchas personas a través del tiempo</p></li>
+<li><p>Necesidad de organizar esta complejidad, minimizar errores y hacer flujos de trabajos más eficientes</p></li>
+<li><p>Del control de versiones a entornos colaborativos</p></li>
+</ul>
+</section>
+<section id="bowers-j.-voors-m.-2016" class="slide level2">
+<h2>Bowers, J., &amp; Voors, M. (2016)</h2>
+
+<img data-src="secundarios/imagenes/paper.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="segunda-razón-eficiencia-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Segunda razón: eficiencia</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="la-base">La base:</h4>
+<ol type="1">
+<li><p><strong>El análisis de datos es programación</strong>: Codear todo lo que se pueda codear, evitar trabajo manual (<em>copypaste</em>) y asi minimizar errores</p></li>
+<li><p><strong>Ningún análisis de datos es una isla por mucho tiempo:</strong> No lo hacemos solo nosotros, eventualmente llega a otra persona. Comentar código y documentar.</p></li>
+<li><p><strong>El territorio del análisis de datos requiere mapas:</strong> Debemos saber de dónde vienen los datos y qué opéraciones se hacen en qué set de datos. Organización de carpetas y nombres de archivos intuitiva.</p></li>
+</ol>
+</section>
+<section id="section-3" class="slide level2 custom-bg">
+<h2></h2>
+<ol start="4" type="1">
+<li><strong>El control de versiones previene el <em>clobbering</em>, reconcilia el historial y ayuda a organizar el trabajo:</strong> Evitar perdida de información y conflictos</li>
+</ol>
+<ul>
+<li><p>Es necesario saber qué versiones de archivos son nuevas, cuáles son viejas y qué ha cambiado entremedio (track changes)</p></li>
+<li><p><strong>Clobbering:</strong> cuando se elimina trabajo hecho por acidente o cuando se crean duplicados y es necesario revisar al detalle cuál es el original (gastando tiempo y energías)</p></li>
+</ul>
+</section></section>
+<section>
+<section id="cómo-usar-el-control-de-versiones" class="title-slide slide level1 custom-bg center">
+<h1>3. ¿Cómo usar el control de versiones?</h1>
+
+</section>
+<section id="git-un-software-de-control-de-versiones" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git: un software de control de versiones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Es una especie de memoria o registro local que guarda información sobre: qué cambio se hizo, quién lo hizo y cuándo lo hizo</p></li>
+<li><p>Mantiene la información de todos los cambios en la historia de la carpeta / repositorio local</p></li>
+<li><p>Se puede sincronizar con repositorio remoto (ej. Github o Gitlab)</p></li>
+</ul>
+
+<img data-src="secundarios/imagenes/git.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="git-un-software-de-control-de-versiones-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git: un software de control de versiones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Actualmente, Git/Github posee más de 100 millones de repositorios</p></li>
+<li><p>Mayor fuente de código en el mundo</p></li>
+<li><p>Ha transitado desde el mundo de desarrollo de software hacia distintos ámbitos de trabajo colaborativo y abierto</p></li>
+<li><p>Entorno de trabajo que favorece la ciencia abierta</p></li>
+</ul>
+</section>
+<section id="section-4" class="slide level2 custom-bg">
+<h2></h2>
+<h4 id="git-no-es-un-registro-de-versiones-de-archivos-específicos-sino-de-una-carpeta-completa">✔ Git no es un registro de versiones de archivos específicos, sino de una <strong>carpeta completa</strong></h4>
+<p><br></p>
+<h4 id="guarda-fotos-de-momentos-específicos-de-la-carpeta-y-esta-foto-se-saca-mediante-un-commit">✔ Guarda “fotos” de momentos específicos de la carpeta, y esta foto se <em>saca</em> mediante un <em>commit</em></h4>
+</section>
+<section id="flujo-de-trabajo-básico-con-git" class="slide level2">
+<h2>Flujo de trabajo básico con Git</h2>
+
+<img data-src="secundarios/imagenes/gitflow.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="git-un-software-de-control-de-versiones-2" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git: un software de control de versiones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="commits">Commits</h4>
+<ul>
+<li><p>El <em>commit</em> es el procedimiento fundamental del control de versiones</p></li>
+<li><p>Git no registra cualquier cambio que se “guarda”, sino los que se “comprometen” (<em>commit</em>)</p></li>
+<li><p>Registra cuándo y quien los hizo</p></li>
+<li><p>Registra de qué se trata a través de un <strong>mensaje de commit</strong></p></li>
+<li><p>Permite volver a momentos o “fotos” anteriores de la carpeta, evitando cambiar nombres de archivos para versionar</p></li>
+</ul>
+</section>
+<section id="git-un-software-de-control-de-versiones-3" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git: un software de control de versiones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="pasos-básicos">Pasos básicos</h4>
+<ol type="1">
+<li><p>Inicializar la carpeta como repositorio git (solo la primera vez)</p></li>
+<li><p>Agregar (<em>add</em>) los cambios que se quieran comprometer al escenario de compromiso (<em>stage</em>)</p></li>
+<li><p>Mensaje de <em>commit</em></p></li>
+<li><p><em>Commit</em></p></li>
+</ol>
+</section>
+<section id="git-un-software-de-control-de-versiones-4" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git: un software de control de versiones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="uso">Uso</h4>
+<ul>
+<li><p>Git es un programa que tradicionalmente se utiliza mediante comandos desde el <strong>terminal</strong> (<em>git bash</em>)</p></li>
+<li><p>Actualmente, existen una serie de programas locales (clientes) que facilitan el uso de Git</p></li>
+<li><p>En esta capacitación, vamos a utilizar Git/Gitlab mediante sus opciones disponibles en <strong>RStudio</strong></p></li>
+</ul>
+</section>
+<section id="gitlabgithub" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Gitlab/Github</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Gitlab y Github son páginas que albergan repositorios de códigos para fomentar la colaboración entre desarroladores y otros usuarios de código: redes sociales</p></li>
+<li><p>Son empresas distintas, pero para efectos de lo que nosotros hacemos cumplen los mismos objetivos</p></li>
+<li><p>Github es más utilizado por personas corrientes que buscan disponer su trabajo al público, Gitlab más por empresas</p></li>
+<li><p>En el INE se utiliza Gitlab porque permite hacer uso de servidores propios (más seguridad)</p></li>
+</ul>
+<p><img data-src="secundarios/imagenes/gitlab.png" class="quarto-figure quarto-figure-left" style="width:10.0%"> <img data-src="secundarios/imagenes/github.png" class="quarto-figure quarto-figure-right" style="width:10.0%"></p>
+</section>
+<section id="git-en-rstudio" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git en RStudio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Recordar que Git versiona carpetas, por lo que se debe estar posicionado en la carpeta del proyecto</p></li>
+<li><p>Por lo mismo, se recomienda trabajar en carpetas de proyecto con la función RProject</p></li>
+<li><p>Para revisar/confirmar antes en qué carpeta se está posicionado: <code>getwd()</code></p></li>
+</ul>
+</section>
+<section id="git-para-el-trabajo-propio" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo propio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="inicializar-repositorio">Inicializar repositorio</h4>
+
+<img data-src="secundarios/imagenes/gitinit.png" class="r-stretch"><ul>
+<li><p><em>Version control system</em> -&gt; <em>project setup</em> -&gt; <strong><em>Git</em></strong></p></li>
+<li><p>Confirm restart</p></li>
+</ul>
+</section>
+<section id="git-para-el-trabajo-propio-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo propio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li>también se puede hacer al momento de iniciar una carpeta como RProject (opción <em>create a git repository</em>)</li>
+</ul>
+
+<img data-src="secundarios/imagenes/gitinit2.png" class="r-stretch"></section>
+<section id="git-para-el-trabajo-propio-2" class="slide level2">
+<h2>Git para el trabajo propio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+
+<img data-src="secundarios/imagenes/gitinit3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="git-para-el-trabajo-propio-3" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo propio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="elementos">Elementos</h4>
+<ul>
+<li><p>Botón Git</p></li>
+<li><p>Pestaña Git</p></li>
+<li><p>Archivos Git: para poder visualizarlos todos, en la ventana de archivos <em>(Files) -&gt; More -&gt; Show hidden Files</em></p></li>
+<li><p>Aparece una carpeta oculta <code>.git</code>, que es donde se almacena toda la información de las versiones.</p></li>
+</ul>
+</section>
+<section id="commit-inicial" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Commit inicial</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+
+<img data-src="secundarios/imagenes/gitinit4.png" class="r-stretch"><ul>
+<li><p>Ir a la pestaña Git</p></li>
+<li><p>Marcar todos los archivos como <em>staged</em></p></li>
+<li><p>Botón commit</p></li>
+<li><p>Escribir un mensaje de commit, y luego botón “commit”</p></li>
+</ul>
+</section>
+<section id="ejemplo-commit" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Ejemplo: commit</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Cuando un archivo se guarda, aparece listado en la pestaña Git, donde se registran todos los cambios desde el último commit</p></li>
+<li><p>Luego se marca con un tick <em>staged</em> para todos los archivos que van a ser parte del <em>commit</em></p></li>
+<li><p>Botón <em>commit</em> + mensaje de <em>commit</em> + hacer <em>commit</em></p></li>
+</ul>
+</section>
+<section id="ejemplo-commit-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Ejemplo: commit</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+
+<img data-src="secundarios/imagenes/gitinit5.png" class="r-stretch"></section>
+<section id="revisión-de-versiones-anteriores" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Revisión de versiones anteriores</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+
+<img data-src="secundarios/imagenes/history.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><ul>
+<li><p>Boton <em>history</em></p></li>
+<li><p>Abre ventana donde aparece el listado de commits</p></li>
+<li><p>En la ventana se puede navegar entre commits y los archivos de cada commit</p></li>
+<li><p>Cambios de versiones anteriores en verde</p></li>
+</ul>
+</section>
+<section id="revisión-de-versiones-anteriores-1" class="slide level2">
+<h2>Revisión de versiones anteriores</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+
+<img data-src="secundarios/imagenes/gitinit6.png" class="r-stretch"></section>
+<section id="recomendaciones" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Recomendaciones</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>Hacer commits sustantivos, es decir, de un momento del código que sea relevante registrar. Evitar commits muy pequeños o muy grandes.</p></li>
+<li><p>Hacer mensajes de commit informativos y breves. Estos deben representar el cambio realizado al código en no más de 40 caracteres y deben ser escritos de forma imperativa, por ejemplo: “etiquetar variables de tiempo”. Si no es posible sintetizar los cambios en un mensaje de commit, probablemente es un commit con demasiados cambios.</p></li>
+<li><p>Hacer commits periodicamente (ni muy espaciado ni muy cercano en el tiempo)</p></li>
+</ul>
+</section>
+<section id="sobre-git-y-entornos-colaborativos" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Sobre Git y entornos colaborativos</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ul>
+<li><p>El uso de Git para archivos locales es útil, pero compite con otros sistemas de versionamiento local individual/remoto (Dropbox, Drive)</p></li>
+<li><p>El mayor sentido de usar Git es para: trabajo colaborativo y repositorios públicos</p></li>
+<li><p>Conocer Git otorga las bases para utilizar repositorios públicos como <strong>Github</strong>, que faciltan la reproducibilidad, colaboración, apertura y publicación de resultados.</p></li>
+</ul>
+</section>
+<section id="git-para-el-trabajo-colaborativo" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo colaborativo</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="clonar-repo">Clonar repo</h4>
+<ul>
+<li>En RStudio: File &gt; New Project &gt; Version Control &gt; Git</li>
+</ul>
+
+<img data-src="secundarios/imagenes/Rstudio_creategit.png" class="r-stretch"></section>
+<section id="git-para-el-trabajo-colaborativo-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo colaborativo</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="clonar-repo-1">Clonar repo</h4>
+<ul>
+<li><p>Pegar URL copiado en paso anterior</p></li>
+<li><p>Dar ruta local</p></li>
+</ul>
+
+<img data-src="secundarios/imagenes/rstudio_clone.png" class="r-stretch"></section>
+<section id="git-para-el-trabajo-colaborativo-2" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo colaborativo</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="subir-cambios-push">Subir cambios (<em>push</em>)</h4>
+<ul>
+<li><p>Cambiar algo: contenido de un archivo, agregar nuevo archivo, borrar archivo …</p></li>
+<li><p>Realizar <em>commit</em> de esos cambios</p></li>
+<li><p>Botón <em>push</em></p></li>
+</ul>
+
+<img data-src="secundarios/imagenes/commit.png" class="r-stretch"></section>
+<section id="git-para-el-trabajo-colaborativo-3" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo colaborativo</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="subir-cambios-push-1">Subir cambios (<em>push</em>)</h4>
+<ul>
+<li>autentificación (solo primera vez): username, mail y clave (de cuenta de Github/Gitlab)</li>
+</ul>
+</section>
+<section id="git-para-el-trabajo-colaborativo-4" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Git para el trabajo colaborativo</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<h4 id="bajar-cambios-pull">Bajar cambios (<em>pull</em>)</h4>
+<ul>
+<li><p>Situaciones: haber realizado cambios directamente editando en Github u otra persona que colabora en el repositorio ha agregado cambios</p></li>
+<li><p>En RStudio: botón Pull</p></li>
+<li><p>Si hay algún <em>pull</em> pendiente no permitirá hacer <em>push</em></p></li>
+</ul>
+</section></section>
+<section>
+<section id="ejercicio" class="title-slide slide level1 custom-bg center">
+<h1>Ejercicio</h1>
+
+</section>
+<section id="ejercicio-1" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Ejercicio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ol type="1">
+<li>Entrar a https://gitlab.com/</li>
+<li>Loguearse con las siguientes credenciales</li>
+</ol>
+<p><strong>Randy:</strong> usuario1.ine.esi@gmail.com<br>
+<strong>Luis Felipe:</strong> usuario2.ine.esi@gmail.com<br>
+<strong>Isa:</strong> usuario3.ine.esi@gmail.com<br>
+<strong>Victor:</strong> usuario4.ine.esi@gmail.com</p>
+<p>Contraseña: (Ine2024)</p>
+</section>
+<section id="ejercicio-2" class="slide level2 background-slide" data-background-image="secundarios/imagenes/fondo_ine2024.png" data-background-size="contain">
+<h2>Ejercicio</h2>
+<div style="margin-top: 2cm;">
+
+</div>
+<ol start="3" type="1">
+<li>Copiar el proyecto/repositorio <code>capacitacion-git</code> via HTTPS</li>
+<li>Modificar el script correspondiente a su numero de usuario (<em>usuario1 -&gt; script1</em>)</li>
+<li>Hacer <em>commit</em></li>
+<li>Hacer <em>pull</em></li>
+<li>Hacer <em>push</em></li>
+</ol>
+</section></section>
+<section id="muchas-gracias" class="title-slide slide level1 custom-bg center">
+<h1>¡Muchas gracias!</h1>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="secundarios/imagenes/logo_portada2.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="capacitacion-git_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="capacitacion-git_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="capacitacion-git_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="capacitacion-git_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': true,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'concave',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

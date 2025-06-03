@@ -1,0 +1,460 @@
+---
+format:
+  revealjs:
+    auto-stretch: true
+    margin: 0.1
+    slide-number: true
+    scrollable: false
+    preview-links: auto
+    logo: secundarios/imagenes/logo_portada2.png
+    css: ine_quarto_styles.css
+    transition: concave
+    pdf-separate-fragments: true
+---
+
+#
+
+[]{.linea-superior} 
+[]{.linea-inferior} 
+
+<img src="secundarios/imagenes/logo_portada2.png" width="20%"/>  
+
+[**Control de versiones y entornos colaborativos para la producción de datos**]{.big-par .center-justified}
+
+[*Capacitación ENUT-ESI*]{.big-par .center-justified}
+
+[*Noviembre 2024*]{.big-par .center-justified}
+
+## ​ Contenidos {.custom-bg}
+
+. . .
+
+1. ¿Qué es el control de versiones?
+
+. . .
+
+2. ¿Por qué usar control de versiones?
+
+. . . 
+
+3. ¿Cómo usar el control de versiones?
+
+# 1. Qué es el control de versiones {.custom-bg}
+
+## Definiendo el control de verisones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+> Un control de versiones es un **sistema** que **registra los cambios** realizados en un archivo o conjunto de archivos a lo largo del **tiempo**, de modo que puedas **recuperar** versiones específicas más adelante ([Git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Acerca-del-Control-de-Versiones))
+
+> El control de versiones, también conocido como "control de código fuente", es la práctica de **rastrear** y gestionar los cambios en el código de software. Los **sistemas** de control de versiones son herramientas de software que ayudan a los equipos de software a gestionar los cambios en el código fuente a lo largo del **tiempo** ([Atlassian](https://www.atlassian.com/es/git/tutorials/what-is-version-control))
+
+## Definiendo el control de verisones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+> Los sistemas de control de versiones son un tipo de **software** que ayuda a hacer un **seguimiento de los cambios** realizados en el código a lo largo del **tiempo**. A medida que un desarrollador edita el código, el sistema de control de versiones toma una instantánea de los archivos. Después, guarda esa instantánea de forma permanente para que se pueda **recuperar** más adelante si es necesario ([Microsoft](https://learn.microsoft.com/es-es/devops/develop/git/what-is-version-control))
+
+
+![](secundarios/imagenes/versioncontrol.png){fig-align="center" width=100%}
+
+## Definiendo el control de verisones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+- **Idea principal:** Un sistema que permite llevar un registro de los cambios efectuados a uno o más archivos a través del tiempo
+
+- Google Docs y Microsoft Word como las formas más conocidas de llevar un registro de cambios
+
+- Usar el nombre de los archivos para denotar la versión
+:::
+
+::::
+![](secundarios/imagenes/google.png){fig-align="right" width=100%}
+
+## Nombres como versionamiento...
+![](secundarios/imagenes/final.jpg){fig-align="center" width=100%}
+
+## Nombres como versionamiento...
+![](secundarios/imagenes/exit.jpg){fig-align="center" width=100%}
+
+# 2. ¿Por qué usar el control de versiones? {.custom-bg}
+
+## Primera razón: credibilidad {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Ciencia abierta:
+
+> «Ciencia abierta» es un término genérico utilizado para referirse a los conceptos de apertura, transparencia, rigor, reproducibilidad, replicabilidad y acumulación de conocimientos, todos ellos considerados rasgos fundamentales del quehacer científico. ([Cruwell et al., 2019](https://osf.io/preprints/psyarxiv/cfzyx))
+
+> Las reformas propuestas en materia de ciencia abierta responden en gran medida a la constatación de que las prácticas habituales de investigación socavan los principios fundamentales de la ciencia abierta y de alta calidad (...). La mayoría de los científicos coinciden en que existe una crisis de reproducibilidad, al menos en cierta medida. ([Cruwell et al., 2019](https://osf.io/preprints/psyarxiv/cfzyx))
+
+## Primera razón: credibilidad {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+Principios mertonianos de la ciencia:
+
+- **Universalismo:** La idea de que las afirmaciones científicas deben estar sujetas criterios objetivos preestablecidos e impersonales.
+
+- **Comunalismo:** Los hallazgos de la ciencia son propiedad común de la comunidad científica y el progreso científico depende de la comunicación abierta y el intercambio.
+
+- **Desinterés:** La ciencia debería limitar la influencia del sesgo tanto como sea posible y debería hacerse por el bien de la ciencia, más que por interés propio o poder.
+
+- **Escepticismo organizado:** La necesidad de prueba o verificación somete a la ciencia a más escrutinio que cualquier otro campo.
+
+##
+![](secundarios/imagenes/definitions.jpg){fig-align="center" width=100%}
+
+##
+![](secundarios/imagenes/reproducible.jpg){fig-align="center" width=100%}
+
+## Primera razón: credibilidad {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Como productores de datos, no hacemos ciencia directamente, pero damos los insumos para el avance de la investigación
+
+- Por lo demás, somos fuente directa de la toma de decisiones en materia de políticas públicas
+
+- El INE avanza en la reproducibilidad al entregar documentos de metodología y manual de usuario, pero esto es solo el principio.
+
+## Segunda razón: eficiencia {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Proyectos grandes y complejos: muchas decisiones entre muchas personas a través del tiempo
+
+- Necesidad de organizar esta complejidad, minimizar errores y hacer flujos de trabajos más eficientes
+
+- Del control de versiones a entornos colaborativos
+
+## Bowers, J., & Voors, M. (2016)
+
+![](secundarios/imagenes/paper.png){fig-align="center" width=100%}
+
+## Segunda razón: eficiencia {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### La base:
+
+1. **El análisis de datos es programación**: Codear todo lo que se pueda codear, evitar trabajo manual (_copypaste_) y asi minimizar errores
+
+2. **Ningún análisis de datos es una isla por mucho tiempo:** No lo hacemos solo nosotros, eventualmente llega a otra persona. Comentar código y documentar.
+
+3. **El territorio del análisis de datos requiere mapas:** Debemos saber de dónde vienen los datos y qué opéraciones se hacen en qué set de datos. Organización de carpetas y nombres de archivos intuitiva.
+
+## {.custom-bg}
+
+4. **El control de versiones previene el _clobbering_, reconcilia el historial y ayuda a organizar el trabajo:** Evitar perdida de información y conflictos
+
+- Es necesario saber qué versiones de archivos son nuevas, cuáles son viejas y qué ha cambiado entremedio (track changes)
+
+- **Clobbering:** cuando se elimina trabajo hecho por acidente o cuando se crean duplicados y es necesario revisar al detalle cuál es el original (gastando tiempo y energías)
+
+# 3. ¿Cómo usar el control de versiones? {.custom-bg}
+
+## Git: un software de control de versiones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Es una especie de memoria o registro local que guarda información sobre: qué cambio se hizo, quién lo hizo y cuándo lo hizo
+
+- Mantiene la información de todos los cambios en la historia de la carpeta / repositorio local
+
+- Se puede sincronizar con repositorio remoto (ej. Github o Gitlab)
+
+![](secundarios/imagenes/git.png){fig-align="center" width=100%}
+
+## Git: un software de control de versiones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Actualmente, Git/Github posee más de 100 millones de repositorios
+
+- Mayor fuente de código en el mundo
+
+- Ha transitado desde el mundo de desarrollo de software hacia distintos ámbitos de trabajo colaborativo y abierto
+
+- Entorno de trabajo que favorece la ciencia abierta
+
+---
+
+## {.custom-bg}
+
+#### ✔ Git no es un registro de versiones de archivos específicos, sino de una **carpeta completa**
+
+<br>
+
+#### ✔ Guarda "fotos" de momentos específicos de la carpeta, y esta foto se *saca* mediante un _commit_
+
+## Flujo de trabajo básico con Git
+
+![](secundarios/imagenes/gitflow.png){fig-align="center" width=100%}
+
+## Git: un software de control de versiones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Commits
+
+- El _commit_ es el procedimiento fundamental del control de versiones
+
+- Git no registra cualquier cambio que se "guarda", sino los que se "comprometen" (_commit_)
+
+- Registra cuándo y quien los hizo
+
+- Registra de qué se trata a través de un **mensaje de commit**
+
+- Permite volver a momentos o "fotos" anteriores de la carpeta, evitando cambiar nombres de archivos para versionar
+
+## Git: un software de control de versiones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Pasos básicos
+
+1. Inicializar la carpeta como repositorio git (solo la primera vez)
+
+2. Agregar (_add_) los cambios que se quieran comprometer al escenario de compromiso (_stage_)
+
+3. Mensaje de _commit_
+
+4. _Commit_
+
+## Git: un software de control de versiones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Uso
+
+- Git es un programa que tradicionalmente se utiliza mediante comandos desde el **terminal** (_git bash_)
+
+- Actualmente, existen una serie de programas locales (clientes) que facilitan el uso de Git
+
+- En esta capacitación, vamos a utilizar Git/Gitlab mediante sus opciones disponibles en **RStudio**
+
+## Gitlab/Github {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Gitlab y Github son páginas que albergan repositorios de códigos para fomentar la colaboración entre desarroladores y otros usuarios de código: redes sociales
+
+- Son empresas distintas, pero para efectos de lo que nosotros hacemos cumplen los mismos objetivos
+
+- Github es más utilizado por personas corrientes que buscan disponer su trabajo al público, Gitlab más por empresas
+
+- En el INE se utiliza Gitlab porque permite hacer uso de servidores propios (más seguridad)
+
+![](secundarios/imagenes/gitlab.png){fig-align="left" width=10%}
+![](secundarios/imagenes/github.png){fig-align="right" width=10%}
+
+## Git en RStudio {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Recordar que Git versiona carpetas, por lo que se debe estar posicionado en la carpeta del proyecto
+
+- Por lo mismo, se recomienda trabajar en carpetas de proyecto con la función RProject
+
+- Para revisar/confirmar antes en qué carpeta se está posicionado: `getwd()`
+
+## Git para el trabajo propio {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Inicializar repositorio
+
+![](secundarios/imagenes/gitinit.png)
+
+- _Version control system_ -> _project setup_ -> **_Git_**
+
+- Confirm restart
+
+## Git para el trabajo propio {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- también se puede hacer al momento de iniciar una carpeta como RProject (opción _create a git repository_)
+
+![](secundarios/imagenes/gitinit2.png)
+
+## Git para el trabajo propio
+
+<div style="margin-top: 2cm;"></div>
+
+![](secundarios/imagenes/gitinit3.png){fig-align="center" width=100%}
+
+## Git para el trabajo propio {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Elementos
+
+- Botón Git
+
+- Pestaña Git
+
+- Archivos Git: para poder visualizarlos todos, en la ventana de archivos _(Files) -> More -> Show hidden Files_
+
+- Aparece una carpeta oculta `.git`, que es donde se almacena toda la información de las versiones.
+
+## Commit inicial  {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+![](secundarios/imagenes/gitinit4.png)
+
+- Ir a la pestaña Git
+
+- Marcar todos los archivos como _staged_
+
+- Botón commit
+
+- Escribir un mensaje de commit, y luego botón "commit"
+
+## Ejemplo: commit {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Cuando un archivo se guarda, aparece listado en la pestaña Git, donde se registran todos los cambios desde el último commit
+
+- Luego se marca con un tick _staged_ para todos los archivos que van a ser parte del _commit_
+
+- Botón _commit_ + mensaje de _commit_ + hacer _commit_
+
+## Ejemplo: commit {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+![](secundarios/imagenes/gitinit5.png)
+
+## Revisión de versiones anteriores {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+![](secundarios/imagenes/history.png){fig-align="center" width=100%}
+
+- Boton *history*
+
+- Abre ventana donde aparece el listado de commits
+
+- En la ventana se puede navegar entre commits y los archivos de cada commit
+
+- Cambios de versiones anteriores en verde
+
+## Revisión de versiones anteriores
+
+<div style="margin-top: 2cm;"></div>
+
+![](secundarios/imagenes/gitinit6.png)
+
+## Recomendaciones {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- Hacer commits sustantivos, es decir, de un momento del código que sea relevante registrar. Evitar commits muy pequeños o muy grandes.
+
+- Hacer mensajes de commit informativos y breves. Estos deben representar el cambio realizado al código en no más de 40 caracteres y deben ser escritos de forma imperativa, por ejemplo: "etiquetar variables de tiempo". Si no es posible sintetizar los cambios en un mensaje de commit, probablemente es un commit con demasiados cambios.
+
+- Hacer commits periodicamente (ni muy espaciado ni muy cercano en el tiempo)
+
+## Sobre Git y entornos colaborativos {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+- El uso de Git para archivos locales es útil, pero compite con otros sistemas de versionamiento local individual/remoto (Dropbox, Drive)
+
+- El mayor sentido de usar Git es para: trabajo colaborativo y repositorios públicos
+  
+- Conocer Git otorga las bases para utilizar repositorios públicos como **Github**, que faciltan la reproducibilidad, colaboración, apertura y publicación de resultados. 
+
+## Git para el trabajo colaborativo {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Clonar repo
+
+- En RStudio: File > New Project > Version Control > Git
+
+![](secundarios/imagenes/Rstudio_creategit.png)
+
+## Git para el trabajo colaborativo {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Clonar repo
+
+- Pegar URL copiado en paso anterior 
+
+- Dar ruta local
+
+![](secundarios/imagenes/rstudio_clone.png)
+
+## Git para el trabajo colaborativo {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Subir cambios (_push_)
+
+- Cambiar algo: contenido de un archivo, agregar nuevo archivo, borrar archivo ...
+
+- Realizar _commit_ de esos cambios
+
+- Botón _push_
+
+![](secundarios/imagenes/commit.png)
+
+## Git para el trabajo colaborativo {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Subir cambios (_push_)
+
+- autentificación (solo primera vez): username, mail y clave (de cuenta de Github/Gitlab)
+  
+## Git para el trabajo colaborativo {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+#### Bajar cambios (_pull_)
+
+- Situaciones: haber realizado cambios directamente editando en Github u otra persona que colabora en el repositorio ha agregado cambios
+  
+- En RStudio: botón Pull
+
+- Si hay algún _pull_ pendiente no permitirá hacer _push_
+
+# Ejercicio {.custom-bg}
+
+## Ejercicio {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+1. Entrar a https://gitlab.com/
+2. Loguearse con las siguientes credenciales
+
+**Randy:** usuario1.ine.esi@gmail.com  
+**Luis Felipe:** usuario2.ine.esi@gmail.com  
+**Isa:** usuario3.ine.esi@gmail.com  
+**Victor:** usuario4.ine.esi@gmail.com  
+
+Contraseña: (Ine2024)
+
+## Ejercicio {.background-slide background-image="secundarios/imagenes/fondo_ine2024.png" background-size="contain"}
+
+<div style="margin-top: 2cm;"></div>
+
+3. Copiar el proyecto/repositorio `capacitacion-git` via HTTPS
+4. Modificar el script correspondiente a su numero de usuario (_usuario1 -> script1_)
+5. Hacer _commit_
+6. Hacer _pull_
+7. Hacer _push_
+
+# ¡Muchas gracias! {.custom-bg}
